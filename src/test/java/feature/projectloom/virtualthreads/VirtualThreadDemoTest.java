@@ -1,4 +1,4 @@
-package feature.projectloom;
+package feature.projectloom.virtualthreads;
 
 import feature.projectloom.virtualthreads.VirtualThreadDemo;
 import feature.projectloom.virtualthreads.Task;
