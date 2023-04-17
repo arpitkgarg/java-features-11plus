@@ -1,7 +1,5 @@
 package feature.projectloom.virtualthreads;
 
-import feature.projectloom.virtualthreads.VirtualThreadDemo;
-import feature.projectloom.virtualthreads.Task;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class VirtualThreadDemoTest {
 
-    private VirtualThreadDemo virtualThreadDemo = new VirtualThreadDemo();
+    private final VirtualThreadDemo virtualThreadDemo = new VirtualThreadDemo();
 
 
     @Test
@@ -36,7 +34,7 @@ public class VirtualThreadDemoTest {
     @Test
     public void testVirtualThreadDemo_preVirtualThread(){
 
-        assertThrows( OutOfMemoryError.class, ()-> virtualThreadDemo.noOfThreadsBeforeVirtualThread());
+        assertThrows( OutOfMemoryError.class, virtualThreadDemo::noOfThreadsBeforeVirtualThread);
 
     }
 
