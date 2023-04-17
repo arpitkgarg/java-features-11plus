@@ -1,15 +1,14 @@
-package learn.features.switchExpression;
+package feature.switchExpression;
 
 import org.junit.jupiter.api.Test;
 
-import static learn.features.switchExpression.SwitchExpressionInJava11.VehicleType.Bike;
-import static learn.features.switchExpression.SwitchExpressionInJava11.VehicleType.Gear_less_Bike;
-import static learn.features.switchExpression.SwitchExpressionInJava11.VehicleType.Mini_Truck;
-import static learn.features.switchExpression.SwitchExpressionInJava11.collectTollFee;
+import static feature.switchExpression.SwitchExpressionInJava14.VehicleType.Bike;
+import static feature.switchExpression.SwitchExpressionInJava14.VehicleType.Gear_less_Bike;
+import static feature.switchExpression.SwitchExpressionInJava14.VehicleType.Mini_Truck;
+import static feature.switchExpression.SwitchExpressionInJava14.collectTollFee;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class SwitchExpressionInJava11Test {
-
+class SwitchExpressionInJava14Test {
     @Test
     void shouldCollectTollFeeForBike() {
         double tollFee = collectTollFee(Bike);
@@ -30,5 +29,4 @@ class SwitchExpressionInJava11Test {
 
         assertEquals(60, tollFee);
     }
-
 }

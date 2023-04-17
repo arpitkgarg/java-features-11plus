@@ -1,4 +1,4 @@
-package learn.features.record;
+package feature.record;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package learn.features.projectloom.virtualthreads;
+package feature.projectloom.virtualthreads;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadLocalRandom;

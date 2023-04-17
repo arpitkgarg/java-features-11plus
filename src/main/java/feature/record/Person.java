@@ -1,4 +1,4 @@
-package learn.features.record;
+package feature.record;
 
 public record Person ( String name, Integer age) {
 }

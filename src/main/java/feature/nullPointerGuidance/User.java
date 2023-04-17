@@ -1,4 +1,4 @@
-package learn.features.nullPointerGuidance;
+package feature.nullPointerGuidance;
 
 public class User {
     public UserDetail userDetail;

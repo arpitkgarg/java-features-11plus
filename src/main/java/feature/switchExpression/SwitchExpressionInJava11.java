@@ -1,4 +1,4 @@
-package learn.features.switchExpression;
+package feature.switchExpression;
 
 
 public class SwitchExpressionInJava11 {

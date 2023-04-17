@@ -1,6 +1,6 @@
-package learn.features.nullpointerGuidance;
+package feature.nullpointerGuidance;
 
-import learn.features.nullPointerGuidance.User;
+import feature.nullPointerGuidance.User;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

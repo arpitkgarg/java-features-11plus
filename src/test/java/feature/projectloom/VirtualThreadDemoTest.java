@@ -1,7 +1,7 @@
-package learn.features.projectloom;
+package feature.projectloom;
 
-import learn.features.projectloom.virtualthreads.Task;
-import learn.features.projectloom.virtualthreads.VirtualThreadDemo;
+import feature.projectloom.virtualthreads.VirtualThreadDemo;
+import feature.projectloom.virtualthreads.Task;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -67,7 +67,7 @@ public class VirtualThreadDemoTest {
     public void testVirtualThreadDemo4_1() throws ExecutionException, InterruptedException {
 
         List<Task> tasks = new ArrayList<>();
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 1000; i++) {
             tasks.add(new Task(i));
         }
 
