@@ -1,6 +1,7 @@
+package learn.features.projectloom;
+
 import learn.features.projectloom.virtualthreads.Task;
 import learn.features.projectloom.virtualthreads.VirtualThreadDemo;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
