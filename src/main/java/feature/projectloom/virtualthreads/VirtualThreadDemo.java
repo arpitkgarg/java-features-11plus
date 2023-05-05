@@ -56,18 +56,12 @@ public class VirtualThreadDemo {
         kernelThread.join();
     }
 
-    public void virtualThreadDemo1(Runnable runnable) throws InterruptedException {
-
-       preVirtualThread(runnable);
-       postvirtualThread(runnable);
-    }
-
-    private static void postvirtualThread(Runnable runnable) throws InterruptedException {
+    public void postVirtualThread(Runnable runnable) throws InterruptedException {
         Thread vThread = Thread.ofVirtual().start(runnable);
         vThread.join();
     }
 
-    private static void preVirtualThread(Runnable runnable) throws InterruptedException {
+    public  void preVirtualThread(Runnable runnable) throws InterruptedException {
         System.out.println("Pre virtual thread");
         Thread t = new Thread(runnable);
         t.start();

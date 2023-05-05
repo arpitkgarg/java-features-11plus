@@ -13,43 +13,24 @@ public class VirtualThreadDemoTest {
 
     private final VirtualThreadDemo virtualThreadDemo = new VirtualThreadDemo();
 
-
     @Test
-    public void testVirtualThreadDemo1() throws InterruptedException {
-        Runnable runnable = () -> {
-            for(int i=0; i<1000; i++) {
-                System.out.println("Index: " + i + " " + Thread.currentThread());
-            }
-        };
-
-        virtualThreadDemo.virtualThreadDemo1(runnable);
-    }
-
-    @Test
-    public void testVirtualThreadDemo2() throws InterruptedException {
-        Runnable printThread = () -> System.out.println(Thread.currentThread());
-        virtualThreadDemo.virtualThreadDemo2(printThread);
-    }
-
-    @Test
-    public void testVirtualThreadDemo_preVirtualThread(){
+    public void test_noOfVirtualThreadsDemo_preVirtualThread(){
 
         assertThrows( OutOfMemoryError.class, virtualThreadDemo::noOfThreadsBeforeVirtualThread);
 
     }
 
     @Test
-    public void testVirtualThreadDemo_postVirtualThread(){
+    public void test_noOfVirtualThreadsDemo_postVirtualThread(){
 
         assertTrue(virtualThreadDemo.noOfVirtualThreadsDemo() > 150000);
     }
 
-
     @Test
-    public void testVirtualThreadDemo4() throws ExecutionException, InterruptedException {
+    public void testPerformanceBeforeVirtualThread() throws ExecutionException, InterruptedException {
 
         List<Task> tasks = new ArrayList<>();
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 1000; i++) {
             tasks.add(new Task(i));
         }
 
@@ -62,7 +43,7 @@ public class VirtualThreadDemoTest {
     }
 
     @Test
-    public void testVirtualThreadDemo4_1() throws ExecutionException, InterruptedException {
+    public void testPerformanceAfterVirtualThread() throws ExecutionException, InterruptedException {
 
         List<Task> tasks = new ArrayList<>();
         for (int i = 0; i < 1000; i++) {
@@ -75,5 +56,22 @@ public class VirtualThreadDemoTest {
 
         time = System.currentTimeMillis() - time;
         System.out.println("sum = " + sum + "; time = " + time + " ms");
+    }
+    @Test
+    public void test_CreationOfThread_preVirtualThread() throws InterruptedException {
+        Runnable runnable = () -> System.out.println(Thread.currentThread());
+        virtualThreadDemo.preVirtualThread(runnable);
+    }
+
+    @Test
+    public void test_CreationOfThread_postVirtualThread() throws InterruptedException {
+        Runnable runnable = () -> System.out.println(Thread.currentThread());
+        virtualThreadDemo.postVirtualThread(runnable);
+    }
+
+    @Test
+    public void test_CreationOfThreadPostVirtualThread() throws InterruptedException {
+        Runnable printThread = () -> System.out.println(Thread.currentThread());
+        virtualThreadDemo.virtualThreadDemo2(printThread);
     }
 }
